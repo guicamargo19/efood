@@ -6,7 +6,12 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 60px 80px;
+  padding: 50px 0;
+
+  img {
+    padding-left: 82px;
+    margin-top: -10px;
+  }
 
   a {
     text-decoration: none;
@@ -32,5 +37,11 @@ export const ImagemFundo = styled.div`
     font-size: 32px;
     line-height: 38px;
     font-weight: 100;
+    padding-top: 24px;
+  }
+
+  h1 {
+    padding-top: 156px;
+    color: ${Colors.mainBackground};
   }
 `

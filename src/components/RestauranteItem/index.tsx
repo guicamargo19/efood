@@ -11,7 +11,7 @@ import {
   TituloContainer
 } from './styles'
 
-type Props = {
+export type Props = {
   title: string
   rating: string
   description: string

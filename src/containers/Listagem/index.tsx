@@ -7,7 +7,7 @@ export type Props = {
 }
 
 export const Listagem = ({ restaurantes }: Props) => (
-  <ListaRestaurantes>
+  <ListaRestaurantes className="container">
     {restaurantes.map((restaurante) => (
       <RestauranteItem
         key={restaurante.id}
