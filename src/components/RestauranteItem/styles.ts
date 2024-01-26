@@ -3,10 +3,9 @@ import { Colors } from '../../styles'
 
 export const RestauranteContainer = styled.div`
   width: 100%;
-  border: 1px solid ${Colors.textColor};
   display: block;
-  margin-top: 60px;
-  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
   position: relative;
 `
 
@@ -18,10 +17,17 @@ export const Infos = styled.div`
 
 export const ContainerInfo = styled.div`
   padding: 6px;
+  border-left: 1px solid ${Colors.textColor};
+  border-bottom: 1px solid ${Colors.textColor};
+  border-right: 1px solid ${Colors.textColor};
+  border-top: none;
+  padding-bottom: 46px;
 `
 
 export const ImageCover = styled.img`
+  height: 210px;
   width: 100%;
+  object-fit: cover;
 `
 
 export const TituloContainer = styled.div`
