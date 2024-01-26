@@ -2,6 +2,7 @@ import pizza from '../../assets/pizza.png'
 import { HeaderPerfil } from '../../containers/HeaderPerfil'
 import { Cardapio } from '../../containers/Cardapio'
 import Menu from '../../models/Menu'
+//import { restaurantes } from '../Home'
 
 const itens: Menu[] = [
   {
@@ -51,6 +52,7 @@ const itens: Menu[] = [
 const Perfil = () => (
   <>
     <HeaderPerfil />
+    {/* <HeaderPerfil restaurantes={restaurantes}/> */}
     <Cardapio itens={itens} />
   </>
 )
