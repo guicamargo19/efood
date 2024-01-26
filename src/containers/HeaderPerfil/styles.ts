@@ -26,7 +26,7 @@ export const HeaderContainer = styled.div`
 
 export const ImagemFundo = styled.div`
   width: 100%;
-  display: block;
+  display: flex;
   height: 280px;
   background-repeat: no-repeat;
   background-size: cover;

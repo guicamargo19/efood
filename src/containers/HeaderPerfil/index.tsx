@@ -3,14 +3,9 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import fundo from '../../assets/fundo.png'
 import macarrao from '../../assets/macarrao-fundo.png'
-import Restaurante from '../../models/Restaurante'
 import HeaderMenuItem from '../../components/HeaderMenuItem'
 
-export type Props = {
-  restaurantes: Restaurante[]
-}
-
-export const HeaderPerfil = ({ restaurantes }: Props) => (
+export const HeaderPerfil = () => (
   <div>
     <div style={{ backgroundImage: `url(${fundo})` }}>
       <HeaderContainer className="container">
@@ -22,13 +17,7 @@ export const HeaderPerfil = ({ restaurantes }: Props) => (
       </HeaderContainer>
     </div>
     <ImagemFundo style={{ backgroundImage: `url(${macarrao})` }}>
-      {restaurantes.map((restaurantes) => (
-        <HeaderMenuItem
-          key={restaurantes.id}
-          title={restaurantes.title}
-          tags={restaurantes.tags}
-        />
-      ))}
+      <HeaderMenuItem />
     </ImagemFundo>
   </div>
 )

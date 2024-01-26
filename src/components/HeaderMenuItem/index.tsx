@@ -1,16 +1,12 @@
 import Tag from '../Tag'
+import { ContainerHeader } from './styles'
 
-export type Props = {
-  tags: string[]
-  title: string
-}
-
-const HeaderMenuItem = ({ tags, title }: Props) => (
+const HeaderMenuItem = () => (
   <div className="container">
-    {tags.map((tag) => (
-      <Tag key={tag}>{tag}</Tag>
-    ))}
-    <h1>{title}</h1>
+    <ContainerHeader>
+      <Tag>Italiana</Tag>
+      <h1>La Dolce Vita Trattoria</h1>
+    </ContainerHeader>
   </div>
 )
 

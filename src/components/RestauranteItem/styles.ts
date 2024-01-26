@@ -3,7 +3,6 @@ import { Colors } from '../../styles'
 
 export const RestauranteContainer = styled.div`
   width: 100%;
-  display: block;
   display: flex;
   flex-direction: column;
   position: relative;
