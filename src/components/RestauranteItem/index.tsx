@@ -17,6 +17,7 @@ export type Props = {
   description: string
   tags: string[]
   image: string
+  id: number
 }
 
 const RestauranteItem = ({
@@ -24,15 +25,14 @@ const RestauranteItem = ({
   rating,
   description,
   tags,
-  image
+  image,
+  id
 }: Props) => (
   <RestauranteContainer>
     <ImageCover src={image} alt={title} />
     <Infos>
       {tags.map((tag) => (
-        <Tag size="small" key={tag}>
-          {tag}
-        </Tag>
+        <Tag key={tag}>{tag}</Tag>
       ))}
     </Infos>
     <ContainerInfo>
@@ -43,7 +43,7 @@ const RestauranteItem = ({
         </span>
       </TituloContainer>
       <Descricao>{description}</Descricao>
-      <Link to={'/perfil'}>
+      <Link to={`/perfil/${id}`}>
         <Botao>Saiba mais</Botao>
       </Link>
     </ContainerInfo>

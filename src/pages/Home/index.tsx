@@ -25,7 +25,7 @@ export const restaurantes: Restaurante[] = [
   },
   {
     id: 3,
-    title: 'Hioki Sushi',
+    title: 'Saizeryia',
     description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     image: sushi,
@@ -34,7 +34,7 @@ export const restaurantes: Restaurante[] = [
   },
   {
     id: 4,
-    title: 'Hioki Sushi',
+    title: 'Jolly Pasta',
     description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     image: sushi,
@@ -43,7 +43,7 @@ export const restaurantes: Restaurante[] = [
   },
   {
     id: 5,
-    title: 'Hioki Sushi',
+    title: 'Guioza no Oshõ',
     description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     image: sushi,
@@ -52,7 +52,7 @@ export const restaurantes: Restaurante[] = [
   },
   {
     id: 6,
-    title: 'Hioki Sushi',
+    title: 'KFC',
     description:
       'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida. Experimente o Japão sem sair do lar com nosso delivery!',
     image: sushi,

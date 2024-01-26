@@ -16,6 +16,7 @@ export const Listagem = ({ restaurantes }: Props) => (
         tags={restaurante.tags}
         description={restaurante.description}
         rating={restaurante.rating}
+        id={restaurante.id}
       />
     ))}
   </ListaRestaurantes>

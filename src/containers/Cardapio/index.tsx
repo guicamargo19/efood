@@ -7,14 +7,16 @@ export type Props = {
 }
 
 export const Cardapio = ({ itens }: Props) => (
-  <ListaCardapio className="container">
-    {itens.map((itens) => (
-      <CardapioItem
-        key={itens.id}
-        title={itens.title}
-        image={itens.image}
-        description={itens.description}
-      />
-    ))}
-  </ListaCardapio>
+  <>
+    <ListaCardapio className="container">
+      {itens.map((itens) => (
+        <CardapioItem
+          key={itens.id}
+          title={itens.title}
+          image={itens.image}
+          description={itens.description}
+        />
+      ))}
+    </ListaCardapio>
+  </>
 )

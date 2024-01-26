@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Colors } from '../../styles'
-import { TagContainer } from '../Tag/styles'
+import { TagContainer } from '../../components/Tag/styles'
 
 export const HeaderContainer = styled.div`
   display: flex;
