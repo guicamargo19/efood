@@ -4,7 +4,7 @@ import sushi from '../../assets/japones.png'
 import italia from '../../assets/italiano.png'
 import { Header } from '../../components/Header'
 
-const restaurantes: Restaurante[] = [
+export const restaurantes: Restaurante[] = [
   {
     id: 1,
     title: 'Hioki Sushi',

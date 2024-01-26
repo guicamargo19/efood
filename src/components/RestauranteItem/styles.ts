@@ -29,6 +29,16 @@ export const TituloContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 12px;
+  font-weight: bold;
+
+  span {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-left: 6px;
+    }
+  }
 `
 
 export const Descricao = styled.p`
