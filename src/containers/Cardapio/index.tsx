@@ -1,22 +1,27 @@
-import { ListaCardapio } from './styles'
+/* import { ListaCardapio } from './styles'
 import { CardapioItem } from '../../components/CardapioItem'
-import Menu from '../../models/Menu'
+*/
+
+import { Restaurante } from '../../pages/Home'
 
 export type Props = {
-  itens: Menu[]
+  restaurante: Restaurante[]
 }
 
-export const Cardapio = ({ itens }: Props) => (
-  <>
+/* export const Cardapio = ({ restaurante }: Props) => ({ */
+/* <>
+    
     <ListaCardapio className="container">
-      {itens.map((itens) => (
-        <CardapioItem
-          key={itens.id}
-          title={itens.title}
-          image={itens.image}
-          description={itens.description}
-        />
+      {cardapio.map((menu) => (
+        {menu.menu.map((item) => (
+          <CardapioItem
+            key={item}
+            title={menu.name}
+            image={menu.cover}
+            description={menu.description}
+          />
+        ))}
       ))}
     </ListaCardapio>
-  </>
-)
+  </> */
+/* }) */

@@ -1,60 +1,19 @@
-import pizza from '../../assets/pizza.png'
-import { HeaderPerfil } from '../../containers/HeaderPerfil'
+/* import { HeaderPerfil } from '../../containers/HeaderPerfil'
 import { Cardapio } from '../../containers/Cardapio'
-import Menu from '../../models/Menu'
-//import { restaurantes } from '../Home'
+import { useParams } from 'react-router-dom'
+import { useState } from 'react' */
 
-const itens: Menu[] = [
-  {
-    id: 1,
-    title: 'Pizza Margueritta',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 2,
-    title: 'Pizza Margueritta',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 3,
-    title: 'Pizza Margueritta',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 4,
-    title: 'Pizza Margueritta',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 5,
-    title: 'Pizza Margueritta',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  },
-  {
-    id: 6,
-    title: 'Pizza Margueritta',
-    description:
-      'A clássica Marguerita: molho de tomate suculento, mussarela derretida, manjericão fresco e um toque de azeite. Sabor e simplicidade!',
-    image: pizza
-  }
-]
+const Perfil = () => {
+  /*   const { id } = useParams()
 
-const Perfil = () => (
-  <>
-    <HeaderPerfil />
-    {/* <HeaderPerfil restaurantes={restaurantes}/> */}
-    <Cardapio itens={itens} />
-  </>
-)
+  const [restaurante, setRestaurante] = useState()
+  return (
+    <>
+      <HeaderPerfil />
+      <HeaderPerfil restaurantes={restaurante} />
+      <Cardapio itens={cardapio} />
+    </>
+  ) */
+}
 
 export default Perfil

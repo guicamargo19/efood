@@ -10,44 +10,36 @@ import {
   RestauranteContainer,
   TituloContainer
 } from './styles'
-
-export type Props = {
-  title: string
-  rating: string
-  description: string
-  tags: string[]
-  image: string
-  id: number
-}
+import { Restaurante } from '../../pages/Home'
 
 const RestauranteItem = ({
-  title,
-  rating,
-  description,
-  tags,
-  image,
+  titulo,
+  avaliacao,
+  descricao,
+  tipo,
+  capa,
   id
-}: Props) => (
-  <RestauranteContainer>
-    <ImageCover src={image} alt={title} />
-    <Infos>
-      {tags.map((tag) => (
-        <Tag key={tag}>{tag}</Tag>
-      ))}
-    </Infos>
-    <ContainerInfo>
-      <TituloContainer>
-        <h2>{title}</h2>
-        <span>
-          {rating} <img src={estrela} alt="Estrela" />
-        </span>
-      </TituloContainer>
-      <Descricao>{description}</Descricao>
-      <Link to={`/perfil/${id}`}>
-        <Botao>Saiba mais</Botao>
-      </Link>
-    </ContainerInfo>
-  </RestauranteContainer>
-)
+}: Restaurante) => {
+  return (
+    <RestauranteContainer>
+      <ImageCover src={capa} alt={titulo} />
+      <Infos>
+        <Tag>{tipo}</Tag>
+      </Infos>
+      <ContainerInfo>
+        <TituloContainer>
+          <h2>{titulo}</h2>
+          <span>
+            {avaliacao} <img src={estrela} alt="Estrela" />
+          </span>
+        </TituloContainer>
+        <Descricao>{descricao}</Descricao>
+        <Link to={`/perfil/${id}`}>
+          <Botao>Saiba mais</Botao>
+        </Link>
+      </ContainerInfo>
+    </RestauranteContainer>
+  )
+}
 
 export default RestauranteItem

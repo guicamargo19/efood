@@ -1,5 +1,5 @@
 import RestauranteItem from '../../components/RestauranteItem'
-import Restaurante from '../../models/Restaurante'
+import { Restaurante } from '../../pages/Home'
 import { ListaRestaurantes } from './styles'
 
 export type Props = {
@@ -9,15 +9,18 @@ export type Props = {
 export const Listagem = ({ restaurantes }: Props) => (
   <ListaRestaurantes className="container">
     {restaurantes.map((restaurante) => (
-      <RestauranteItem
-        key={restaurante.id}
-        title={restaurante.title}
-        image={restaurante.image}
-        tags={restaurante.tags}
-        description={restaurante.description}
-        rating={restaurante.rating}
-        id={restaurante.id}
-      />
+      <li key={restaurante.id}>
+        <RestauranteItem
+          titulo={restaurante.titulo}
+          capa={restaurante.capa}
+          tipo={restaurante.tipo}
+          descricao={restaurante.descricao}
+          avaliacao={restaurante.avaliacao}
+          id={restaurante.id}
+          destacado={restaurante.destacado}
+          cardapio={restaurante.cardapio}
+        />
+      </li>
     ))}
   </ListaRestaurantes>
 )
