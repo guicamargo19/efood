@@ -4,10 +4,12 @@ import { Props } from '.'
 
 export const TagContainer = styled.div<Props>`
   background-color: ${Colors.textColor};
-  color: ${Colors.mainBackground};
-  font-size: 14px;
-  font-weight: bold;
-  padding: 4px 6px;
+  color: ${Colors.footerBackground};
+  font-size: 12px;
+  width: 72px;
+  text-align: center;
+  font-weight: 700;
+  padding: 6px 10px;
+  line-height: 14px;
   display: inline-block;
-  margin-right: 6px;
 `

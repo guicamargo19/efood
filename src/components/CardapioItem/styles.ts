@@ -2,39 +2,44 @@ import styled from 'styled-components'
 import { Colors } from '../../styles'
 
 export const CardapioContainer = styled.div`
+  max-width: 320px;
   width: 100%;
   border: none
   display: block;
-  margin-top: 30px;
+  padding: 8px;
   padding-bottom: 6px;
   background-color: ${Colors.textColor};
-  color: ${Colors.mainBackground};
+  color: ${Colors.footerBackground};
 `
 
 export const ContainerInfo = styled.div`
-  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 `
 
 export const ImageCover = styled.div`
-  padding: 10px;
-
   img {
+    height: 168px;
     width: 100%;
   }
 `
 
 export const Descricao = styled.p`
   text-align: justify;
-  height: 50px;
-  font-size: 16px;
-  margin-bottom: 30px;
-  line-height: 20px;
-  font-weight: 100;
+  //height: 88px;
+  font-size: 14px;
+  padding-bottom: 8px;
+  line-height: 22px;
+  font-weight: 400;
 `
 
 export const Botao = styled.button`
@@ -43,7 +48,7 @@ export const Botao = styled.button`
   border: 1px solid ${Colors.mainBackground};
   width: 100%;
   text-decoration: none;
-  padding: 6px;
+  padding: 4px;
   cursor: pointer;
   font-weight: bold;
 

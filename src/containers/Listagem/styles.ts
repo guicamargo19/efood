@@ -4,6 +4,6 @@ export const ListaRestaurantes = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 80px;
-  row-gap: 60px;
+  row-gap: 48px;
   padding-top: 80px;
 `

@@ -6,7 +6,6 @@ export const Imagem = styled.div`
   height: 384px;
   background-repeat: no-repeat;
   background-size: cover;
-  font-weight: bold;
 
   .container {
     position: relative;
@@ -15,13 +14,14 @@ export const Imagem = styled.div`
     align-items: center;
 
     img {
-      margin-top: 40px;
+      margin-top: 64px;
       width: 125px;
     }
 
     h2 {
-      font-weight: bold;
+      font-weight: 900;
       margin-top: 150px;
+      padding-bottom: 40px;
       font-size: 36px;
       text-align: center;
       line-height: 42px;

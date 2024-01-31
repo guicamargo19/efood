@@ -16,9 +16,10 @@ export const FooterContainer = styled.div`
   }
 
   p {
-    font-size: 12px;
+    font-size: 10px;
     margin-top: 20px;
-    line-height: 14px;
+    line-height: 12px;
+    font-weight: 400;
     color: ${Colors.textColor};
   }
 `
@@ -26,12 +27,12 @@ export const FooterContainer = styled.div`
 export const SocialContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 90px;
+  margin-bottom: 80px;
 
   a {
     img {
-      width: 30px;
-      padding: 3px;
+      width: 24px;
+      margin-left: 8px;
 
       &:hover {
         transition: 0.3s;

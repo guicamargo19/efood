@@ -6,17 +6,19 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 0;
+  padding: 62px 0;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
 
   img {
-    padding-left: 82px;
-    margin-top: -10px;
+    margin-left: 82px;
+    width: 125px;
   }
 
   a {
     text-decoration: none;
     color: ${Colors.textColor};
-    font-weight: bold;
 
     &:hover {
       text-decoration: underline;
