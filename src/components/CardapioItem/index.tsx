@@ -8,22 +8,24 @@ import {
 } from './styles'
 
 type Props = {
-  title: string
-  description: string
-  image: string
+  nome: string
+  descricao: string
+  foto: string
 }
 
-export const CardapioItem = ({ title, description, image }: Props) => (
-  <CardapioContainer>
-    <ImageCover>
-      <img src={image} alt={title} />
-    </ImageCover>
-    <ContainerInfo>
-      <h2>{title}</h2>
-      <Descricao>{description}</Descricao>
-      <Link to={'#'}>
-        <Botao>Adicionar ao carrinho</Botao>
-      </Link>
-    </ContainerInfo>
-  </CardapioContainer>
+export const CardapioItem = ({ nome, descricao, foto }: Props) => (
+  <li>
+    <CardapioContainer>
+      <ImageCover>
+        <img src={foto} alt={nome} />
+      </ImageCover>
+      <ContainerInfo>
+        <h2>{nome}</h2>
+        <Descricao>{descricao}</Descricao>
+        <Link to={'#'}>
+          <Botao>Adicionar ao carrinho</Botao>
+        </Link>
+      </ContainerInfo>
+    </CardapioContainer>
+  </li>
 )
