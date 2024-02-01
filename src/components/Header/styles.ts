@@ -16,6 +16,12 @@ export const Imagem = styled.div`
     img {
       margin-top: 64px;
       width: 125px;
+      transition: 0.3s;
+
+      &:hover {
+        scale: 1.1;
+        transition: 0.3s;
+      }
     }
 
     h2 {

@@ -41,6 +41,14 @@ export const CardapioItem = ({
       isVisible: false
     })
   }
+
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 120) {
+      return descricao.slice(0, 117) + '...'
+    }
+    return descricao
+  }
+
   return (
     <li>
       <CardapioContainer>
@@ -49,7 +57,7 @@ export const CardapioItem = ({
         </ImageCover>
         <ContainerInfo>
           <h2>{nome}</h2>
-          <Descricao>{descricao}</Descricao>
+          <Descricao>{getDescricao(descricao)}</Descricao>
           <Link to={'#'}>
             <Botao
               onClick={() =>

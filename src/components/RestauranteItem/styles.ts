@@ -87,8 +87,6 @@ export const Botao = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: ${Colors.mainBackground};
-    color: ${Colors.textColor};
-    border: 1px solid ${Colors.textColor};
+    text-decoration: underline;
   }
 `
