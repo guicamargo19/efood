@@ -30,6 +30,7 @@ export const ImageCover = styled.div`
   img {
     height: 168px;
     width: 100%;
+    object-fit: cover;
   }
 `
 

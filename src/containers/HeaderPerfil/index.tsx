@@ -17,7 +17,7 @@ export const HeaderPerfil = ({ restaurantes }: Props) => {
           <Link to={'/'}>Restaurantes</Link>
           <img src={logo} alt="Logo EFood" />
           <div>
-            <span>0 </span>Produdo(s) no carrinho
+            <span>0 </span>Produto(s) no carrinho
           </div>
         </HeaderContainer>
       </div>
