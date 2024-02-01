@@ -58,7 +58,7 @@ export const CardapioItem = ({
                 })
               }
             >
-              Adicionar ao carrinho
+              Mais detalhes
             </Botao>
           </Link>
         </ContainerInfo>
