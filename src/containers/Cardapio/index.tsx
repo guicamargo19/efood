@@ -16,6 +16,8 @@ export const Cardapio = ({ restaurante }: Props) => {
             nome={item.nome}
             foto={item.foto}
             descricao={item.descricao}
+            porcao={item.porcao}
+            preco={item.preco}
           />
         ))}
       </ListaCardapio>

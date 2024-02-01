@@ -26,6 +26,7 @@ export const HeaderPerfil = ({ restaurantes }: Props) => {
         style={{ backgroundImage: `url(${restaurantes.capa})` }}
       >
         <HeaderMenuItem title={restaurantes.titulo} tags={restaurantes.tipo} />
+        <div className="overlay"></div>
       </ImagemFundo>
     </div>
   )

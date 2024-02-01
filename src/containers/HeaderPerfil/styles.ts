@@ -32,6 +32,16 @@ export const ImagemFundo = styled.div`
   height: 280px;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+  }
 
   ${TagContainer} {
     background-color: transparent;
