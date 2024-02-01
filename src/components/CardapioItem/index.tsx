@@ -12,6 +12,7 @@ import {
 } from './styles'
 import { useState } from 'react'
 import close from '../../assets/close.png'
+import { formataPreco } from '../../containers/Cardapio'
 
 type Props = {
   nome: string
@@ -90,10 +91,10 @@ export const CardapioItem = ({
                 {descricao}
                 <br />
                 <br />
-                <span>Serve: de {porcao}</span>
+                <span>Serve: {porcao}</span>
               </p>
               <button type="button">
-                Adicionar ao carrinho - <span>R$ {preco}</span>
+                Adicionar ao carrinho - <span>{formataPreco(preco)}</span>
               </button>
             </ItemInfoModal>
           </ItemModal>

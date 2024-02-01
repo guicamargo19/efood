@@ -137,7 +137,7 @@ export const ItemInfoModal = styled.div`
   }
 
   button {
-    width: 218px;
+    width: 220px;
     height: 24px;
     color: ${Colors.textColor};
     padding: 5px 8px;

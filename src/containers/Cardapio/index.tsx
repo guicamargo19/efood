@@ -6,6 +6,13 @@ type Props = {
   restaurante: Restaurante
 }
 
+export const formataPreco = (preco = 0) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(preco)
+}
+
 export const Cardapio = ({ restaurante }: Props) => {
   return (
     <>
