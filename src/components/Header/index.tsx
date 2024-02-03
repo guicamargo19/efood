@@ -6,7 +6,7 @@ import { MenuType } from '../../pages/Perfil'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { open } from '../../store/reducers/cart'
-import HeaderMenuItem from '../HeaderMenuItem'
+import Tag from '../Tag'
 
 type Props = {
   restaurantes?: MenuType
@@ -52,7 +52,12 @@ const Header = ({ type, restaurantes }: Props) => {
         key={restaurantes.titulo}
         style={{ backgroundImage: `url(${restaurantes.capa})` }}
       >
-        <HeaderMenuItem title={restaurantes.titulo} tags={restaurantes.tipo} />
+        <div className="container">
+          <div>
+            <Tag>{restaurantes.tipo}</Tag>
+            <h1>{restaurantes.titulo}</h1>
+          </div>
+        </div>
         <div className="overlay"></div>
       </ImagemFundo>
     </div>

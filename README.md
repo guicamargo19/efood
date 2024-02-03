@@ -3,8 +3,9 @@
 Projeto desenvolvido no curso de Full Stack Python da EBAC - Escola Britânica de Artes Criativas e Tecnologia.
 
 Esta página apresenta uma listagem de restaurantes, onde é possível acessar a ágina individual de cada restaurante para
-verificar o cardápio, foi construído com **React-Redux**, estilizado com **Styled-Components** e o roteamento de páginas
-feito com **React-Router-Dom** para implementação de uma **SPA** (Single Page Application).
+verificar o cardápio e inserir o item desejado no carrinho, foi construído com **React-Redux**, estilizado com **Styled-Components**,
+o roteamento de páginas feito com **React-Router-Dom** para implementação de uma **SPA** (Single Page Application) e as requisições para API
+feito com **React-Toolkit-Query**.
 
 ## 🚀 Começando
 
