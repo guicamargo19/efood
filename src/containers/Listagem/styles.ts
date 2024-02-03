@@ -8,12 +8,12 @@ export const ListaRestaurantes = styled.div`
   row-gap: 48px;
   padding-top: 80px;
 
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${breakpoints.tablet}) {
     column-gap: 40px;
     row-gap: 24px;
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.mobile}) {
     grid-template-columns: 1fr;
   }
 `

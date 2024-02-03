@@ -66,7 +66,7 @@ export const Descricao = styled.p`
   line-height: 22px;
   margin-bottom: 16px;
 
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${breakpoints.tablet}) {
     height: 170px;
   }
 `

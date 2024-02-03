@@ -73,7 +73,7 @@ export const ModalContent = styled.div`
   position: relative;
   z-index: 1;
 
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${breakpoints.tablet}) {
     max-width: 90%;
   }
 

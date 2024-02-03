@@ -26,7 +26,7 @@ export const FooterContainer = styled.div`
     color: ${Colors.textColor};
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.mobile}) {
     img {
       width: 96px;
     }

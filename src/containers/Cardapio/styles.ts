@@ -8,11 +8,11 @@ export const ListaCardapio = styled.div`
   width: 100%;
   padding-top: 64px;
 
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.mobile}) {
     grid-template-columns: 1fr;
   }
 `

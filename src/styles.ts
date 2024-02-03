@@ -7,8 +7,8 @@ export const Colors = {
 }
 
 export const breakpoints = {
-  desktop: '1023px',
-  tablet: '767px'
+  tablet: '1023px',
+  mobile: '767px'
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -31,11 +31,11 @@ body {
   margin: 0 auto;
   z-index: 1;
 
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${breakpoints.tablet}) {
     max-width: 80%;
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.mobile}) {
     max-width: 80%;
   }
 }

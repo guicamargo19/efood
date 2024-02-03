@@ -37,7 +37,7 @@ export const Imagem = styled.div`
     }
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.mobile}) {
     height: 300px;
 
     .container {
@@ -89,11 +89,11 @@ export const HeaderContainer = styled.div`
     }
   }
 
-  @media (max-width: ${breakpoints.desktop}) {
+  @media (max-width: ${breakpoints.tablet}) {
     font-size: 16px;
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.mobile}) {
     display: flex;
     flex-direction: column;
     padding-bottom: 32px;
