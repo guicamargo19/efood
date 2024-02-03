@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import {
-  ButtonCotainer,
+  ButtonContainer,
   /* Botao, */
   CardapioContainer,
   ContainerInfo,
@@ -112,7 +112,7 @@ export const CardapioItem = ({
                 <br />
                 <span>Serve: {porcao}</span>
               </p>
-              <ButtonCotainer>
+              <ButtonContainer>
                 <Button
                   title="Clique para adicionar ao carrinho"
                   type="product-link"
@@ -121,7 +121,7 @@ export const CardapioItem = ({
                   Adicionar ao carrinho -
                 </Button>
                 <span>{formataPreco(preco)}</span>
-              </ButtonCotainer>
+              </ButtonContainer>
             </ItemInfoModal>
           </ItemModal>
         </ModalContent>

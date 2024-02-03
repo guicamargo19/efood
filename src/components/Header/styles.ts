@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Colors } from '../../styles'
+import { Colors, breakpoints } from '../../styles'
 import { TagContainer } from '../../components/Tag/styles'
 
 export const Imagem = styled.div`
@@ -47,6 +47,10 @@ export const HeaderContainer = styled.div`
   font-weight: 900;
   font-size: 18px;
   line-height: 22px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    font-size: 16px;
+  }
 
   div {
     cursor: pointer;

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Colors } from '../../styles'
+import { Colors, breakpoints } from '../../styles'
 
 export const RestauranteContainer = styled.div`
   width: 100%;
@@ -15,15 +15,13 @@ export const Infos = styled.div`
 `
 
 export const ContainerInfo = styled.div`
-  position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 8px;
-  padding-bottom: 16px;
-  height: 200px;
   border-left: 1px solid ${Colors.textColor};
   border-bottom: 1px solid ${Colors.textColor};
   border-right: 1px solid ${Colors.textColor};
   border-top: none;
-  padding-bottom: 48px;
 `
 
 export const ImageCover = styled.img`
@@ -62,9 +60,13 @@ export const TituloContainer = styled.div`
 
 export const Descricao = styled.p`
   text-align: justify;
-  height: 88px;
   font-size: 14px;
+  height: 100px;
   font-weight: 400;
   line-height: 22px;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    height: 170px;
+  }
 `

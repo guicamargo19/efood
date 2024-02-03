@@ -6,6 +6,11 @@ export const Colors = {
   footerBackground: '#FFEBD9'
 }
 
+export const breakpoints = {
+  desktop: '1023px',
+  tablet: '767px'
+}
+
 const GlobalStyle = createGlobalStyle`
 * {
   margin: 0;
@@ -25,6 +30,10 @@ body {
   width: 100%;
   margin: 0 auto;
   z-index: 1;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 80%;
+  }
 }
 `
 

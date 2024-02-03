@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { breakpoints } from '../../styles'
 
 export const ListaCardapio = styled.div`
   display: grid;
@@ -6,4 +7,8 @@ export const ListaCardapio = styled.div`
   gap: 32px;
   width: 100%;
   padding-top: 64px;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+  }
 `

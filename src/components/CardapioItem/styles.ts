@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Colors } from '../../styles'
+import { Colors, breakpoints } from '../../styles'
 
 export const CardapioContainer = styled.div`
   max-width: 320px;
@@ -73,6 +73,10 @@ export const ModalContent = styled.div`
   position: relative;
   z-index: 1;
 
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 90%;
+  }
+
   header {
     display: flex;
     justify-content: end;
@@ -118,16 +122,16 @@ export const ItemInfoModal = styled.div`
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 16px;
+    text-align: justify;
   }
 `
 
-export const ButtonCotainer = styled.div`
+export const ButtonContainer = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
   color: ${Colors.textColor};
   width: 218px;
-  //padding: 4px 6px;
   background-color: ${Colors.footerBackground};
 
   span {

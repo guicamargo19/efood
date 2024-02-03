@@ -20,12 +20,10 @@ export const ButtonContainer = styled.button`
 `
 
 export const ButtonLink = styled(Link)`
-  position: absolute;
   background-color: ${Colors.textColor};
   color: ${Colors.footerBackground};
   border: 1px solid ${Colors.textColor};
   width: 82px;
-  height: 24px;
   line-height: 16px;
   font-size: 13px;
   font-weight: 700;
@@ -33,7 +31,6 @@ export const ButtonLink = styled(Link)`
   text-decoration: none;
   padding: 4px 6px;
   align-itens: center;
-  margin-top: -12px;
   cursor: pointer;
 
   &:hover {
