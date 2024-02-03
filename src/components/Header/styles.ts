@@ -17,7 +17,7 @@ export const Imagem = styled.div`
 
     img {
       margin-top: 40px;
-      width: 125px;
+      width: 126px;
       transition: 0.3s;
 
       &:hover {
@@ -36,6 +36,25 @@ export const Imagem = styled.div`
       width: 540px;
     }
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 300px;
+
+    .container {
+      max-width: 80%;
+
+      img {
+        width: 96px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-top: 80px;
+        padding: 16px 20px;
+        width: 360px;
+      }
+    }
+  }
 `
 
 export const HeaderContainer = styled.div`
@@ -48,10 +67,6 @@ export const HeaderContainer = styled.div`
   font-size: 18px;
   line-height: 22px;
 
-  @media (max-width: ${breakpoints.desktop}) {
-    font-size: 16px;
-  }
-
   div {
     cursor: pointer;
 
@@ -62,7 +77,7 @@ export const HeaderContainer = styled.div`
 
   img {
     margin-left: 82px;
-    width: 125px;
+    width: 126px;
   }
 
   a {
@@ -71,6 +86,30 @@ export const HeaderContainer = styled.div`
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    font-size: 16px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 32px;
+
+    a {
+      padding-bottom: 32px;
+    }
+
+    div {
+      padding-top: 32px;
+    }
+
+    img {
+      margin: 0;
+      padding: 0;
+      width: 96px;
     }
   }
 `

@@ -12,4 +12,8 @@ export const ListaRestaurantes = styled.div`
     column-gap: 40px;
     row-gap: 24px;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    grid-template-columns: 1fr;
+  }
 `

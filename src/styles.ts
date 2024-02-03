@@ -34,6 +34,10 @@ body {
   @media (max-width: ${breakpoints.desktop}) {
     max-width: 80%;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 80%;
+  }
 }
 `
 

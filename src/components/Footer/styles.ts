@@ -1,8 +1,10 @@
 import styled from 'styled-components'
-import { Colors } from '../../styles'
+import { Colors, breakpoints } from '../../styles'
 
 export const FooterContainer = styled.div`
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 40px;
@@ -12,15 +14,27 @@ export const FooterContainer = styled.div`
 
   img {
     margin-top: 40px;
-    width: 125px;
+    width: 126px;
   }
 
   p {
     font-size: 10px;
+    width: 480px;
     margin-top: 20px;
     line-height: 12px;
     font-weight: 400;
     color: ${Colors.textColor};
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    img {
+      width: 96px;
+    }
+
+    p {
+      font-size: 8px;
+      width: 330px;
+    }
   }
 `
 
