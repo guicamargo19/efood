@@ -1,17 +1,37 @@
-import { HeaderPerfil } from '../../containers/HeaderPerfil'
+//import { HeaderPerfil } from '../../containers/HeaderPerfil'
+import Header from '../../components/Header'
 import { Cardapio } from '../../containers/Cardapio'
 import { useParams } from 'react-router-dom'
-import { useGetCardapioQuery } from '../../services/api'
+import {
+  useGetCardapioQuery,
+  useGetRestauranteIdQuery
+} from '../../services/api'
+
+export type MenuItensType = {
+  nome: string
+  porcao: string
+  preco: number
+  descricao: string
+  foto: string
+  id: number
+}
+
+export type MenuType = {
+  titulo: string
+  tipo: string
+  capa: string
+}
 
 const Perfil = () => {
   const { id } = useParams()
-  const { data: restaurante } = useGetCardapioQuery(id!)
+  const { data: menu } = useGetCardapioQuery(id!)
+  const { data: restaurante } = useGetRestauranteIdQuery(id!)
 
-  if (restaurante) {
+  if (restaurante && menu) {
     return (
       <>
-        <HeaderPerfil restaurantes={restaurante} />
-        <Cardapio restaurante={restaurante} />
+        <Header type="headerMenu" restaurantes={restaurante} />
+        <Cardapio items={menu} />
       </>
     )
   }

@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import Rotas from './routes'
 import GlobalStyle from './styles'
 import { Footer } from './components/Footer/indes'
+import Cart from './components/Cart'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <GlobalStyle />
         <Rotas />
         <Footer />
+        <Cart />
       </BrowserRouter>
     </Provider>
   )

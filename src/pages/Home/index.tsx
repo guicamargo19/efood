@@ -1,6 +1,7 @@
 import { Listagem } from '../../containers/Listagem'
-import { Header } from '../../components/Header'
+import Header from '../../components/Header'
 import { useGetRestaurantesQuery } from '../../services/api'
+import { MenuItensType } from '../Perfil'
 
 export type Restaurante = {
   id: number
@@ -10,16 +11,7 @@ export type Restaurante = {
   avaliacao: number
   descricao: string
   capa: string
-  cardapio: [
-    {
-      foto: string
-      preco: number
-      id: number
-      nome: string
-      descricao: string
-      porcao: string
-    }
-  ]
+  cardapio: MenuItensType[]
 }
 
 const Home = () => {
@@ -28,7 +20,7 @@ const Home = () => {
   if (restaurantes) {
     return (
       <>
-        <Header />
+        <Header type="headerHome" />
         <Listagem restaurantes={restaurantes} />
       </>
     )

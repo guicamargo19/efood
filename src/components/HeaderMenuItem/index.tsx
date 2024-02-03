@@ -1,5 +1,4 @@
 import Tag from '../Tag'
-import { ContainerHeader } from './styles'
 
 type Props = {
   title: string
@@ -8,10 +7,10 @@ type Props = {
 
 const HeaderMenuItem = ({ title, tags }: Props) => (
   <div className="container">
-    <ContainerHeader>
+    <div>
       <Tag>{tags}</Tag>
       <h1>{title}</h1>
-    </ContainerHeader>
+    </div>
   </div>
 )
 

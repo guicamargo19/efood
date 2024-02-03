@@ -1,9 +1,9 @@
 import { ListaCardapio } from './styles'
 import { CardapioItem } from '../../components/CardapioItem'
-import { Restaurante } from '../../pages/Home'
+import { MenuItensType } from '../../pages/Perfil'
 
 type Props = {
-  restaurante: Restaurante
+  items: MenuItensType[]
 }
 
 export const formataPreco = (preco = 0) => {
@@ -13,19 +13,22 @@ export const formataPreco = (preco = 0) => {
   }).format(preco)
 }
 
-export const Cardapio = ({ restaurante }: Props) => {
+export const Cardapio = ({ items }: Props) => {
   return (
     <>
       <ListaCardapio className="container">
-        {restaurante.cardapio.map((item) => (
-          <CardapioItem
-            key={item.id}
-            nome={item.nome}
-            foto={item.foto}
-            descricao={item.descricao}
-            porcao={item.porcao}
-            preco={item.preco}
-          />
+        {items.map((item) => (
+          <li key={item.id}>
+            <CardapioItem
+              itens={item}
+              nome={item.nome}
+              porcao={item.porcao}
+              preco={item.preco}
+              descricao={item.descricao}
+              foto={item.foto}
+              id={item.id}
+            />
+          </li>
         ))}
       </ListaCardapio>
     </>

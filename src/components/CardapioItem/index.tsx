@@ -13,13 +13,18 @@ import {
 import { useState } from 'react'
 import close from '../../assets/close.png'
 import { formataPreco } from '../../containers/Cardapio'
+import { add, open } from '../../store/reducers/cart'
+import { useDispatch } from 'react-redux'
+import { MenuItensType } from '../../pages/Perfil'
 
-type Props = {
+export type Props = {
+  foto: string
+  preco: number
+  id: number
   nome: string
   descricao: string
-  foto: string
   porcao: string
-  preco: number
+  itens: MenuItensType
 }
 
 interface ModalState {
@@ -27,11 +32,13 @@ interface ModalState {
 }
 
 export const CardapioItem = ({
+  foto,
+  preco,
+  id,
   nome,
   descricao,
-  foto,
   porcao,
-  preco
+  itens
 }: Props) => {
   const [modal, setModal] = useState<ModalState>({
     isVisible: false
@@ -48,6 +55,14 @@ export const CardapioItem = ({
       return descricao.slice(0, 117) + '...'
     }
     return descricao
+  }
+
+  const dispatch = useDispatch()
+
+  const addToCart = () => {
+    dispatch(add(itens))
+    dispatch(open())
+    closeModal()
   }
 
   return (
@@ -83,7 +98,7 @@ export const CardapioItem = ({
           </header>
           <ItemModal>
             <div>
-              <img key={nome} src={foto} alt={nome} />
+              <img key={id} src={foto} alt={nome} />
             </div>
             <ItemInfoModal>
               <h2>{nome}</h2>
@@ -93,7 +108,7 @@ export const CardapioItem = ({
                 <br />
                 <span>Serve: {porcao}</span>
               </p>
-              <button type="button">
+              <button type="button" onClick={addToCart}>
                 Adicionar ao carrinho - <span>{formataPreco(preco)}</span>
               </button>
             </ItemInfoModal>
