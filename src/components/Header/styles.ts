@@ -16,7 +16,7 @@ export const Imagem = styled.div`
     align-items: center;
 
     img {
-      margin-top: 64px;
+      margin-top: 40px;
       width: 125px;
       transition: 0.3s;
 
@@ -28,7 +28,7 @@ export const Imagem = styled.div`
 
     h2 {
       font-weight: 900;
-      margin-top: 150px;
+      margin-top: 140px;
       padding-bottom: 40px;
       font-size: 36px;
       text-align: center;
@@ -42,7 +42,8 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 62px 0;
+  padding-top: 40px;
+  padding-bottom: 64px;
   font-weight: 900;
   font-size: 18px;
   line-height: 22px;
@@ -91,6 +92,8 @@ export const ImagemFundo = styled.div`
     background-color: transparent;
     color: ${Colors.mainBackground};
     font-size: 32px;
+    margin: 0;
+    padding: 0;
     line-height: 38px;
     font-weight: 100;
     padding-top: 24px;
