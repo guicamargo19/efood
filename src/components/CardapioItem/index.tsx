@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import {
-  Botao,
+  ButtonCotainer,
+  /* Botao, */
   CardapioContainer,
   ContainerInfo,
   Descricao,
@@ -16,6 +17,7 @@ import { formataPreco } from '../../containers/Cardapio'
 import { add, open } from '../../store/reducers/cart'
 import { useDispatch } from 'react-redux'
 import { MenuItensType } from '../../pages/Perfil'
+import Button from '../Button'
 
 export type Props = {
   foto: string
@@ -75,7 +77,9 @@ export const CardapioItem = ({
           <h2>{nome}</h2>
           <Descricao>{getDescricao(descricao)}</Descricao>
           <Link to={'#'}>
-            <Botao
+            <Button
+              type="product-link"
+              title="Clique aqui para acessar o item"
               onClick={() =>
                 setModal({
                   isVisible: true
@@ -83,7 +87,7 @@ export const CardapioItem = ({
               }
             >
               Mais detalhes
-            </Botao>
+            </Button>
           </Link>
         </ContainerInfo>
       </CardapioContainer>
@@ -108,9 +112,16 @@ export const CardapioItem = ({
                 <br />
                 <span>Serve: {porcao}</span>
               </p>
-              <button type="button" onClick={addToCart}>
-                Adicionar ao carrinho - <span>{formataPreco(preco)}</span>
-              </button>
+              <ButtonCotainer>
+                <Button
+                  title="Clique para adicionar ao carrinho"
+                  type="product-link"
+                  onClick={addToCart}
+                >
+                  Adicionar ao carrinho -
+                </Button>
+                <span>{formataPreco(preco)}</span>
+              </ButtonCotainer>
             </ItemInfoModal>
           </ItemModal>
         </ModalContent>

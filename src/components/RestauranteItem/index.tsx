@@ -1,8 +1,6 @@
-import { Link } from 'react-router-dom'
 import estrela from '../../assets/star.png'
 import Tag from '../Tag'
 import {
-  Botao,
   ContainerInfo,
   Descricao,
   ImageCover,
@@ -10,7 +8,16 @@ import {
   RestauranteContainer,
   TituloContainer
 } from './styles'
-import { Restaurante } from '../../pages/Home'
+import { ButtonLink } from '../Button/styles'
+
+type Props = {
+  titulo: string
+  avaliacao: number
+  descricao: string
+  tipo: string[]
+  capa: string
+  id: number
+}
 
 const RestauranteItem = ({
   titulo,
@@ -19,12 +26,14 @@ const RestauranteItem = ({
   tipo,
   capa,
   id
-}: Restaurante) => {
+}: Props) => {
   return (
     <RestauranteContainer>
       <ImageCover src={capa} alt={titulo} />
       <Infos>
-        <Tag>{tipo}</Tag>
+        {tipo.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
       </Infos>
       <ContainerInfo>
         <TituloContainer>
@@ -34,9 +43,9 @@ const RestauranteItem = ({
           </span>
         </TituloContainer>
         <Descricao>{descricao}</Descricao>
-        <Link to={`/perfil/${id}`}>
-          <Botao>Saiba mais</Botao>
-        </Link>
+        <ButtonLink to={`/perfil/${id}`}>
+          <p>Saiba mais</p>
+        </ButtonLink>
       </ContainerInfo>
     </RestauranteContainer>
   )

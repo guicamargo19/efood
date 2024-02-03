@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { Botao } from '../CardapioItem/styles'
 import { CartContainer, CartItem, Overlay, Prices, Sidebar } from './styles'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
 import { formataPreco } from '../../containers/Cardapio'
+import Button from '../Button'
 
 const Cart = () => {
   const { isOpen, items: itens } = useSelector(
@@ -43,9 +43,9 @@ const Cart = () => {
         <Prices>
           <p>Valor total</p> <span>{formataPreco(getTotalPrice())}</span>
         </Prices>
-        <Botao title="Clique aqui para continuar com a entrega">
+        <Button type="button" title="Clique aqui para continuar com a entrega">
           Continuar com a entrega
-        </Botao>
+        </Button>
       </Sidebar>
     </CartContainer>
   )

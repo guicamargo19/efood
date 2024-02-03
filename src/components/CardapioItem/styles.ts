@@ -42,22 +42,6 @@ export const Descricao = styled.p`
   font-weight: 400;
 `
 
-export const Botao = styled.button`
-  background-color: ${Colors.footerBackground};
-  color: ${Colors.textColor};
-  border: 1px solid ${Colors.mainBackground};
-  width: 100%;
-  padding: 4px;
-  cursor: pointer;
-  line-height: 17px;
-  font-size: 14px;
-  font-weight: 700;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`
-
 export const Modal = styled.div`
   position: fixed;
   top: 0;
@@ -135,24 +119,25 @@ export const ItemInfoModal = styled.div`
     font-weight: 400;
     margin-bottom: 16px;
   }
+`
 
-  button {
-    width: 220px;
-    height: 24px;
-    color: ${Colors.textColor};
-    padding: 5px 8px;
+export const ButtonCotainer = styled.div`
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: ${Colors.textColor};
+  width: 218px;
+  //padding: 4px 6px;
+  background-color: ${Colors.footerBackground};
+
+  span {
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
-    border: none;
-    justify-content: space-between;
-    align-items: center;
-    display: block;
-    cursor: pointer;
-    background-color: ${Colors.footerBackground};
+    margin-right: 4px;
+  }
 
-    &:hover {
-      text-decoration: underline;
-    }
+  &:hover {
+    cursor: pointer;
   }
 `
