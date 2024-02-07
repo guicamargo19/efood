@@ -1,6 +1,6 @@
-import { ListaCardapio } from './styles'
 import { CardapioItem } from '../../components/CardapioItem'
 import { MenuItensType } from '../../pages/Perfil'
+import { ListaCardapio } from './styles'
 
 type Props = {
   items: MenuItensType[]

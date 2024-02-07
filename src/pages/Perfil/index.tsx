@@ -1,7 +1,6 @@
-//import { HeaderPerfil } from '../../containers/HeaderPerfil'
+import { useParams } from 'react-router-dom'
 import Header from '../../components/Header'
 import { Cardapio } from '../../containers/Cardapio'
-import { useParams } from 'react-router-dom'
 import {
   useGetCardapioQuery,
   useGetRestauranteIdQuery

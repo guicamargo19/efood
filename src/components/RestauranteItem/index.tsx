@@ -1,14 +1,7 @@
-import estrela from '../../assets/star.png'
 import Tag from '../Tag'
-import {
-  ContainerInfo,
-  Descricao,
-  ImageCover,
-  Infos,
-  RestauranteContainer,
-  TituloContainer
-} from './styles'
 import { ButtonLink } from '../Button/styles'
+import estrela from '../../assets/star.png'
+import * as S from './styles'
 
 type Props = {
   titulo: string
@@ -28,26 +21,26 @@ const RestauranteItem = ({
   id
 }: Props) => {
   return (
-    <RestauranteContainer>
-      <ImageCover src={capa} alt={titulo} />
-      <Infos>
+    <S.RestauranteContainer>
+      <S.ImageCover src={capa} alt={titulo} />
+      <S.Infos>
         {tipo.map((tag) => (
           <Tag key={tag}>{tag}</Tag>
         ))}
-      </Infos>
-      <ContainerInfo>
-        <TituloContainer>
+      </S.Infos>
+      <S.ContainerInfo>
+        <S.TituloContainer>
           <h2>{titulo}</h2>
           <span>
             {avaliacao} <img src={estrela} alt="Estrela" />
           </span>
-        </TituloContainer>
-        <Descricao>{descricao}</Descricao>
+        </S.TituloContainer>
+        <S.Descricao>{descricao}</S.Descricao>
         <ButtonLink to={`/perfil/${id}`}>
           <p>Saiba mais</p>
         </ButtonLink>
-      </ContainerInfo>
-    </RestauranteContainer>
+      </S.ContainerInfo>
+    </S.RestauranteContainer>
   )
 }
 

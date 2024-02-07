@@ -1,7 +1,7 @@
-import { Listagem } from '../../containers/Listagem'
-import Header from '../../components/Header'
 import { useGetRestaurantesQuery } from '../../services/api'
+import { Listagem } from '../../containers/Listagem'
 import { MenuItensType } from '../Perfil'
+import Header from '../../components/Header'
 
 export type Restaurante = {
   id: number

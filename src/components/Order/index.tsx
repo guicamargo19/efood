@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
+import InputMask from 'react-input-mask'
+import { useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
 import { useFormik } from 'formik'
-import { useNavigate } from 'react-router-dom'
-import InputMask from 'react-input-mask'
 import { RootReducer } from '../../store'
 import { usePurchaseMutation } from '../../services/api'
 import { clear, close } from '../../store/reducers/cart'
@@ -11,25 +11,16 @@ import { closePayment, openPayment } from '../../store/reducers/payment'
 import { closeDelivery } from '../../store/reducers/delivery'
 import { formataPreco } from '../../containers/Cardapio'
 import Button from '../Button'
-import {
-  CardButton,
-  CardData,
-  CardDataAdress,
-  DeliveryContainer,
-  DeliveryPaymentContainer,
-  OrderContainer,
-  PaymentContainer,
-  Sidebar
-} from './styles'
+import * as S from './styles'
 
 const Order = () => {
   const { deliveryOpen } = useSelector((state: RootReducer) => state.delivery)
   const { orderOpen } = useSelector((state: RootReducer) => state.order)
   const { paymentOpen } = useSelector((state: RootReducer) => state.payment)
   const { items } = useSelector((state: RootReducer) => state.cart)
+  const [purchase, { data }] = usePurchaseMutation()
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const [purchase, { data }] = usePurchaseMutation()
 
   const checkInputError = (fieldName: string) => {
     const isTouched = fieldName in form.touched
@@ -193,9 +184,9 @@ const Order = () => {
   return (
     <>
       {orderOpen && data ? (
-        <OrderContainer className={orderOpen ? 'order-open' : ''}>
-          <Sidebar>
-            <CardData>
+        <S.OrderContainer className={orderOpen ? 'order-open' : ''}>
+          <S.Sidebar>
+            <S.CardData>
               <h2>Pedido realizado - {data.orderId}</h2>
               <p>
                 Estamos felizes em informar que seu pedido já está em processo
@@ -214,7 +205,7 @@ const Order = () => {
                 Esperamos que desfrute de uma deliciosa e agradável experiência
                 gastronômica. Bom apetite!
               </p>
-              <CardButton>
+              <S.CardButton>
                 <Button
                   type="product-link"
                   title="Clique aqui para finalizar o pedido"
@@ -222,16 +213,18 @@ const Order = () => {
                 >
                   Concluir
                 </Button>
-              </CardButton>
-            </CardData>
-          </Sidebar>
-        </OrderContainer>
+              </S.CardButton>
+            </S.CardData>
+          </S.Sidebar>
+        </S.OrderContainer>
       ) : (
         <form onSubmit={form.handleSubmit}>
-          <DeliveryPaymentContainer>
-            <DeliveryContainer className={deliveryOpen ? 'delivery-open' : ''}>
-              <Sidebar>
-                <CardData>
+          <S.DeliveryPaymentContainer>
+            <S.DeliveryContainer
+              className={deliveryOpen ? 'delivery-open' : ''}
+            >
+              <S.Sidebar>
+                <S.CardData>
                   <h2>Entrega</h2>
                   <label htmlFor="nome">Quem irá receber</label>
                   <input
@@ -257,9 +250,9 @@ const Order = () => {
                     onChange={form.handleChange}
                     className={checkInputError('cidade') ? 'error' : ''}
                   />
-                </CardData>
-                <CardDataAdress>
-                  <CardData>
+                </S.CardData>
+                <S.CardDataAdress>
+                  <S.CardData>
                     <label htmlFor="cep">CEP</label>
                     <InputMask
                       mask="99999-999"
@@ -269,8 +262,8 @@ const Order = () => {
                       onChange={form.handleChange}
                       className={checkInputError('cep') ? 'error' : ''}
                     />
-                  </CardData>
-                  <CardData>
+                  </S.CardData>
+                  <S.CardData>
                     <label htmlFor="numero">Número</label>
                     <input
                       id="numero"
@@ -279,9 +272,9 @@ const Order = () => {
                       onChange={form.handleChange}
                       className={checkInputError('numero') ? 'error' : ''}
                     />
-                  </CardData>
-                </CardDataAdress>
-                <CardData>
+                  </S.CardData>
+                </S.CardDataAdress>
+                <S.CardData>
                   <label htmlFor="complemento">Complemento (Opcional)</label>
                   <input
                     id="complemento"
@@ -290,12 +283,12 @@ const Order = () => {
                     onChange={form.handleChange}
                     className={checkInputError('complemento') ? 'error' : ''}
                   />
-                </CardData>
-                <CardButton>
+                </S.CardData>
+                <S.CardButton>
                   <Button
                     onClick={abrirPayment}
                     type="product-link"
-                    title="Clique aqui para continuar com a entrega"
+                    title="Clique aqui para continuar com o pagamento"
                   >
                     Continuar com o pagamento
                   </Button>
@@ -306,12 +299,12 @@ const Order = () => {
                   >
                     Voltar ao carrinho
                   </Button>
-                </CardButton>
-              </Sidebar>
-            </DeliveryContainer>
-            <PaymentContainer className={paymentOpen ? 'payment-open' : ''}>
-              <Sidebar>
-                <CardData>
+                </S.CardButton>
+              </S.Sidebar>
+            </S.DeliveryContainer>
+            <S.PaymentContainer className={paymentOpen ? 'payment-open' : ''}>
+              <S.Sidebar>
+                <S.CardData>
                   <h2>
                     Pagamento - valor a pagar{' '}
                     <span>{formataPreco(getTotalPrice())}</span>
@@ -324,9 +317,9 @@ const Order = () => {
                     onChange={form.handleChange}
                     className={checkInputError('cardName') ? 'error' : ''}
                   />
-                </CardData>
-                <CardDataAdress>
-                  <CardData>
+                </S.CardData>
+                <S.CardDataAdress>
+                  <S.CardData>
                     <label htmlFor="cardNumber">Número do cartão</label>
                     <InputMask
                       mask="9999 9999 9999 9999"
@@ -336,8 +329,8 @@ const Order = () => {
                       onChange={form.handleChange}
                       className={checkInputError('cardNumber') ? 'error' : ''}
                     />
-                  </CardData>
-                  <CardData>
+                  </S.CardData>
+                  <S.CardData>
                     <label htmlFor="cvv">CVV</label>
                     <InputMask
                       mask="999"
@@ -347,10 +340,10 @@ const Order = () => {
                       onChange={form.handleChange}
                       className={checkInputError('cvv') ? 'error' : ''}
                     />
-                  </CardData>
-                </CardDataAdress>
-                <CardDataAdress>
-                  <CardData>
+                  </S.CardData>
+                </S.CardDataAdress>
+                <S.CardDataAdress>
+                  <S.CardData>
                     <label htmlFor="month">Mês de vencimento</label>
                     <InputMask
                       mask="99"
@@ -360,8 +353,8 @@ const Order = () => {
                       onChange={form.handleChange}
                       className={checkInputError('month') ? 'error' : ''}
                     />
-                  </CardData>
-                  <CardData>
+                  </S.CardData>
+                  <S.CardData>
                     <label htmlFor="year">Ano de vencimento</label>
                     <InputMask
                       mask="99"
@@ -371,9 +364,9 @@ const Order = () => {
                       onChange={form.handleChange}
                       className={checkInputError('year') ? 'error' : ''}
                     />
-                  </CardData>
-                </CardDataAdress>
-                <CardButton>
+                  </S.CardData>
+                </S.CardDataAdress>
+                <S.CardButton>
                   <Button
                     type="submit"
                     title="Clique aqui para finalizar o pagamento"
@@ -383,15 +376,15 @@ const Order = () => {
                   </Button>
                   <Button
                     type="product-link"
-                    title="Clique aqui para voltar"
+                    title="Clique aqui para voltar a edição de endereço"
                     onClick={paymentClose}
                   >
                     Voltar para a edição de endereço
                   </Button>
-                </CardButton>
-              </Sidebar>
-            </PaymentContainer>
-          </DeliveryPaymentContainer>
+                </S.CardButton>
+              </S.Sidebar>
+            </S.PaymentContainer>
+          </S.DeliveryPaymentContainer>
         </form>
       )}
     </>

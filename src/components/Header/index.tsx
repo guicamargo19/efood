@@ -1,12 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { open } from '../../store/reducers/cart'
+import { RootReducer } from '../../store'
+import { MenuType } from '../../pages/Perfil'
+import Tag from '../Tag'
 import logo from '../../assets/logo.png'
 import fundo from '../../assets/fundo.png'
-import { HeaderContainer, Imagem, ImagemFundo } from './styles'
-import { Link } from 'react-router-dom'
-import { MenuType } from '../../pages/Perfil'
-import { useDispatch, useSelector } from 'react-redux'
-import { RootReducer } from '../../store'
-import { open } from '../../store/reducers/cart'
-import Tag from '../Tag'
+import * as S from './styles'
 
 type Props = {
   restaurantes?: MenuType
@@ -24,14 +24,14 @@ const Header = ({ type, restaurantes }: Props) => {
 
   if (type === 'headerHome') {
     return (
-      <Imagem style={{ backgroundImage: `url(${fundo})` }}>
+      <S.Imagem style={{ backgroundImage: `url(${fundo})` }}>
         <div className="container">
           <Link to={'/'}>
-            <img src={logo} alt="EFood Logo" />
+            <img src={logo} alt="eFood Logo" />
           </Link>
           <h2>Viva experiências gastronômicas no conforto da sua casa</h2>
         </div>
-      </Imagem>
+      </S.Imagem>
     )
   } else {
     if (!restaurantes) {
@@ -41,15 +41,15 @@ const Header = ({ type, restaurantes }: Props) => {
   return (
     <div>
       <div style={{ backgroundImage: `url(${fundo})` }}>
-        <HeaderContainer className="container">
+        <S.HeaderContainer className="container">
           <Link to={'/'}>Restaurantes</Link>
-          <img src={logo} alt="Logo EFood" />
+          <img src={logo} alt="Logo eFood" />
           <div onClick={openCart}>
             <span>{itens.length} </span>Produto(s) no carrinho
           </div>
-        </HeaderContainer>
+        </S.HeaderContainer>
       </div>
-      <ImagemFundo
+      <S.ImagemFundo
         key={restaurantes.titulo}
         style={{ backgroundImage: `url(${restaurantes.capa})` }}
       >
@@ -60,7 +60,7 @@ const Header = ({ type, restaurantes }: Props) => {
           </div>
         </div>
         <div className="overlay"></div>
-      </ImagemFundo>
+      </S.ImagemFundo>
     </div>
   )
 }

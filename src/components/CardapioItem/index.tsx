@@ -1,22 +1,12 @@
 import { Link } from 'react-router-dom'
-import {
-  ButtonContainer,
-  CardapioContainer,
-  ContainerInfo,
-  Descricao,
-  ImageCover,
-  ItemInfoModal,
-  ItemModal,
-  Modal,
-  ModalContent
-} from './styles'
-import { useState } from 'react'
-import close from '../../assets/close.png'
-import { formataPreco } from '../../containers/Cardapio'
-import { add, open } from '../../store/reducers/cart'
 import { useDispatch } from 'react-redux'
+import { useState } from 'react'
+import { add, open } from '../../store/reducers/cart'
+import { formataPreco } from '../../containers/Cardapio'
 import { MenuItensType } from '../../pages/Perfil'
 import Button from '../Button'
+import close from '../../assets/close.png'
+import * as S from './styles'
 
 export type Props = {
   foto: string
@@ -68,13 +58,13 @@ export const CardapioItem = ({
 
   return (
     <li>
-      <CardapioContainer>
-        <ImageCover>
+      <S.CardapioContainer>
+        <S.ImageCover>
           <img src={foto} alt={nome} />
-        </ImageCover>
-        <ContainerInfo>
+        </S.ImageCover>
+        <S.ContainerInfo>
           <h2>{nome}</h2>
-          <Descricao>{getDescricao(descricao)}</Descricao>
+          <S.Descricao>{getDescricao(descricao)}</S.Descricao>
           <Link to={'#'}>
             <Button
               type="product-link"
@@ -88,10 +78,10 @@ export const CardapioItem = ({
               Mais detalhes
             </Button>
           </Link>
-        </ContainerInfo>
-      </CardapioContainer>
-      <Modal className={modal.isVisible ? 'visible' : ''}>
-        <ModalContent className="container">
+        </S.ContainerInfo>
+      </S.CardapioContainer>
+      <S.Modal className={modal.isVisible ? 'visible' : ''}>
+        <S.ModalContent className="container">
           <header>
             <img
               src={close}
@@ -99,11 +89,11 @@ export const CardapioItem = ({
               onClick={() => closeModal()}
             />
           </header>
-          <ItemModal>
+          <S.ItemModal>
             <div>
               <img key={id} src={foto} alt={nome} />
             </div>
-            <ItemInfoModal>
+            <S.ItemInfoModal>
               <h2>{nome}</h2>
               <p>
                 {descricao}
@@ -111,7 +101,7 @@ export const CardapioItem = ({
                 <br />
                 <span>Serve: {porcao}</span>
               </p>
-              <ButtonContainer>
+              <S.ButtonContainer>
                 <Button
                   title="Clique para adicionar ao carrinho"
                   type="product-link"
@@ -120,12 +110,12 @@ export const CardapioItem = ({
                   Adicionar ao carrinho -
                 </Button>
                 <span>{formataPreco(preco)}</span>
-              </ButtonContainer>
-            </ItemInfoModal>
-          </ItemModal>
-        </ModalContent>
+              </S.ButtonContainer>
+            </S.ItemInfoModal>
+          </S.ItemModal>
+        </S.ModalContent>
         <div className="overlay" onClick={() => closeModal()}></div>
-      </Modal>
+      </S.Modal>
     </li>
   )
 }

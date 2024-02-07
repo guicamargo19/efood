@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { CartContainer, CartItem, Overlay, Prices, Sidebar } from './styles'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
 import { openDelivery } from '../../store/reducers/delivery'
 import { formataPreco } from '../../containers/Cardapio'
 import Button from '../Button'
+import * as S from './styles'
 
 const Cart = () => {
   const { isOpen, items: itens } = useSelector(
@@ -33,24 +33,24 @@ const Cart = () => {
   }
 
   return (
-    <CartContainer className={isOpen ? 'is-open' : ''}>
-      <Overlay onClick={closeCart} />
-      <Sidebar>
+    <S.CartContainer className={isOpen ? 'is-open' : ''}>
+      <S.Overlay onClick={closeCart} />
+      <S.Sidebar>
         <ul>
           {itens.map((item) => (
-            <CartItem key={item.id}>
+            <S.CartItem key={item.id}>
               <img src={item.foto} alt={item.nome} />
               <div>
                 <h3>{item.nome}</h3>
                 <span>{formataPreco(item.preco)}</span>
               </div>
               <button onClick={() => removeItem(item.id)} type="button" />
-            </CartItem>
+            </S.CartItem>
           ))}
         </ul>
-        <Prices>
+        <S.Prices>
           <p>Valor total</p> <span>{formataPreco(getTotalPrice())}</span>
-        </Prices>
+        </S.Prices>
         <Button
           onClick={deliveryOpen}
           type="product-link"
@@ -58,8 +58,8 @@ const Cart = () => {
         >
           Continuar com a entrega
         </Button>
-      </Sidebar>
-    </CartContainer>
+      </S.Sidebar>
+    </S.CartContainer>
   )
 }
 
