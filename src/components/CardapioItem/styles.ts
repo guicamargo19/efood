@@ -102,6 +102,7 @@ export const ItemModal = styled.div`
   img {
     width: 280px;
     height: 280px;
+    object-fit: cover;
   }
 `
 

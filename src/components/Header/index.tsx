@@ -18,6 +18,7 @@ const Header = ({ type, restaurantes }: Props) => {
   const { items: itens } = useSelector((state: RootReducer) => state.cart)
 
   const openCart = () => {
+    if (itens.length === 0) return alert('Seu carrinho está vazio')
     dispatch(open())
   }
 

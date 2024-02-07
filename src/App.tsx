@@ -5,6 +5,7 @@ import Rotas from './routes'
 import GlobalStyle from './styles'
 import { Footer } from './components/Footer/indes'
 import Cart from './components/Cart'
+import Order from './components/Order'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Rotas />
         <Footer />
         <Cart />
+        <Order />
       </BrowserRouter>
     </Provider>
   )

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { CartContainer, CartItem, Overlay, Prices, Sidebar } from './styles'
 import { RootReducer } from '../../store'
 import { close, remove } from '../../store/reducers/cart'
+import { openDelivery } from '../../store/reducers/delivery'
 import { formataPreco } from '../../containers/Cardapio'
 import Button from '../Button'
 
@@ -14,6 +15,10 @@ const Cart = () => {
     dispatch(close())
   }
 
+  const deliveryOpen = () => {
+    dispatch(openDelivery())
+  }
+
   const getTotalPrice = () => {
     return itens.reduce((acumulador, valorAtual) => {
       return (acumulador += valorAtual.preco!)
@@ -21,6 +26,9 @@ const Cart = () => {
   }
 
   const removeItem = (id: number) => {
+    if (itens.length === 1) {
+      dispatch(close())
+    }
     dispatch(remove(id))
   }
 
@@ -43,7 +51,11 @@ const Cart = () => {
         <Prices>
           <p>Valor total</p> <span>{formataPreco(getTotalPrice())}</span>
         </Prices>
-        <Button type="button" title="Clique aqui para continuar com a entrega">
+        <Button
+          onClick={deliveryOpen}
+          type="product-link"
+          title="Clique aqui para continuar com a entrega"
+        >
           Continuar com a entrega
         </Button>
       </Sidebar>

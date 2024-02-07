@@ -16,7 +16,12 @@ const CartSlice = createSlice({
   initialState,
   reducers: {
     add: (state, action: PayloadAction<MenuItensType>) => {
-      state.items.push(action.payload)
+      const menuItem = state.items.find((item) => item.id === action.payload.id)
+      if (!menuItem) {
+        state.items.push(action.payload)
+      } else {
+        alert('Item já adicionado ao carrinho!')
+      }
     },
     remove: (state, action: PayloadAction<number>) => {
       const itemMenu = action.payload
@@ -27,9 +32,12 @@ const CartSlice = createSlice({
     },
     close: (state) => {
       state.isOpen = false
+    },
+    clear: (state) => {
+      state.items = []
     }
   }
 })
 
-export const { add, remove, open, close } = CartSlice.actions
+export const { add, remove, open, close, clear } = CartSlice.actions
 export default CartSlice.reducer

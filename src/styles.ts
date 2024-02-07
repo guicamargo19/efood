@@ -3,7 +3,8 @@ import { createGlobalStyle } from 'styled-components'
 export const Colors = {
   textColor: '#E66767',
   mainBackground: '#FFF8F2',
-  footerBackground: '#FFEBD9'
+  footerBackground: '#FFEBD9',
+  blackText: '#4b4b4b'
 }
 
 export const breakpoints = {

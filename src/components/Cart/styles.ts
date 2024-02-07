@@ -34,7 +34,6 @@ export const Sidebar = styled.aside`
   width: 100%;
   padding: 32px 8px 0 8px;
   color: ${Colors.footerBackground};
-  margin-bottom: 24px;
   z-index: 1;
 
   > button {
