@@ -57,10 +57,39 @@ const Order = () => {
 
   const orderProgress = () => {
     if (form.dirty) {
-      alert(form.errors)
-      if (form.isValid) {
-        dispatch(openOrder())
+      if (form.errors.nome) {
+        alert(`Nome - ${form.errors.nome}`)
       }
+      if (form.errors.endereco) {
+        alert(`Endereço - ${form.errors.endereco}`)
+      }
+      if (form.errors.cidade) {
+        alert(`Cidade - ${form.errors.cidade}`)
+      }
+      if (form.errors.cep) {
+        alert(`CEP - ${form.errors.cep}`)
+      }
+      if (form.errors.numero) {
+        alert(`Número - ${form.errors.numero}`)
+      }
+      if (form.errors.cardName) {
+        alert(`Nome no cartão - ${form.errors.cardName}`)
+      }
+      if (form.errors.cardNumber) {
+        alert(`Número do cartão - ${form.errors.cardNumber}`)
+      }
+      if (form.errors.cvv) {
+        alert(`Código CVV - ${form.errors.cvv}`)
+      }
+      if (form.errors.month) {
+        alert(`Mês de vencimento - ${form.errors.month}`)
+      }
+      if (form.errors.year) {
+        alert(`Ano de vencimento - ${form.errors.year}`)
+      }
+    }
+    if (form.isValid) {
+      dispatch(openOrder())
     }
   }
 
@@ -90,7 +119,7 @@ const Order = () => {
     },
     validationSchema: Yup.object({
       nome: Yup.string()
-        .min(5, 'O nome precisa ter pelo menos 5 caracteres')
+        .min(4, 'O nome precisa ter pelo menos 4 caracteres')
         .required('Campo obrigatório'),
       endereco: Yup.string()
         .min(5, 'O endereço precisa ter pelo menos 5 caracteres')
@@ -99,29 +128,33 @@ const Order = () => {
         .min(2, 'A cidade precisa ter pelo menos 2 caracteres')
         .required('Campo obrigatório'),
       cep: Yup.string()
-        .min(9, 'O CEP precisa ter pelo menos 8 caracteres')
-        .max(9, 'O CEP precisa ter no máximo 8 caracteres')
+        .transform((value) => value.replace(/[^\d]/g, ''))
+        .min(8, 'O CEP precisa ter pelo menos 8 caracteres')
+        .max(8, 'O CEP precisa ter no máximo 8 caracteres')
         .required('Campo obrigatório'),
       numero: Yup.string()
         .min(1, 'O número precisa ter pelo menos 1 caracteres')
-        .max(6, 'O número precisa ter no máximo 6 caracteres')
         .required('Campo obrigatório'),
       cardName: Yup.string()
         .min(5, 'O nome precisa ter pelo menos 5 caracteres')
         .required('Campo obrigatório'),
       cardNumber: Yup.string()
-        .min(19, 'O número do cartão precisa ter pelo menos 16 caracteres')
-        .max(19, 'O número do cartão precisa ter no máximo 16 caracteres')
+        .transform((value) => value.replace(/[^\d]/g, ''))
+        .min(16, 'O número do cartão precisa ter pelo menos 16 caracteres')
+        .max(16, 'O número do cartão precisa ter no máximo 16 caracteres')
         .required('Campo obrigatório'),
       cvv: Yup.string()
+        .transform((value) => value.replace(/[^\d]/g, ''))
         .min(3, 'O CVV precisa ter pelo menos 3 caracteres')
         .max(3, 'O CVV precisa ter no máximo 3 caracteres')
         .required('Campo obrigatório'),
       month: Yup.string()
+        .transform((value) => value.replace(/[^\d]/g, ''))
         .min(2, 'O mês precisa ter pelo menos 2 caracteres')
         .max(2, 'O mês precisa ter no máximo 2 caracteres')
         .required('Campo obrigatório'),
       year: Yup.string()
+        .transform((value) => value.replace(/[^\d]/g, ''))
         .min(2, 'O ano precisa ter pelo menos 2 caracteres')
         .max(2, 'O ano precisa ter no máximo 2 caracteres')
         .required('Campo obrigatório')
