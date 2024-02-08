@@ -11,7 +11,7 @@ import { closePayment, openPayment } from '../../store/reducers/payment'
 import { closeDelivery } from '../../store/reducers/delivery'
 import Button from '../Button'
 import * as S from './styles'
-import { ParseToBrl } from '../../utils'
+import { ParseToBrl, getTotalPrice } from '../../utils'
 
 const Order = () => {
   const { deliveryOpen } = useSelector((state: RootReducer) => state.delivery)
@@ -29,11 +29,6 @@ const Order = () => {
     return hasErrors
   }
 
-  const getTotalPrice = () => {
-    return items.reduce((acumulador, valorAtual) => {
-      return (acumulador += valorAtual.preco!)
-    }, 0)
-  }
   const deliveryClose = () => {
     dispatch(closeDelivery())
   }
@@ -308,7 +303,7 @@ const Order = () => {
                 <S.CardData>
                   <h2>
                     Pagamento - valor a pagar{' '}
-                    <span>{ParseToBrl(getTotalPrice())}</span>
+                    <span>{ParseToBrl(getTotalPrice(items))}</span>
                   </h2>
                   <label htmlFor="cardName">Nome no cartão</label>
                   <input

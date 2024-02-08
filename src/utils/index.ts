@@ -1,5 +1,3 @@
-//import { MenuItensType } from '../pages/Perfil'
-
 export const getTotalPrice = (itens: MenuItensType[]) => {
   return itens.reduce((acumulador, valorAtual) => {
     return (acumulador += valorAtual.preco!)

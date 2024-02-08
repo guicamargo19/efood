@@ -1,5 +1,4 @@
 import RestauranteItem from '../../components/RestauranteItem'
-//import { Restaurante } from '../../pages/Home'
 import { ListaRestaurantes } from './styles'
 
 export type Props = {
