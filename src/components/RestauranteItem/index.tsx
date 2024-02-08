@@ -36,9 +36,11 @@ const RestauranteItem = ({
           </span>
         </S.TituloContainer>
         <S.Descricao>{descricao}</S.Descricao>
-        <ButtonLink to={`/perfil/${id}`}>
-          <p>Saiba mais</p>
-        </ButtonLink>
+        <S.ButtonSpace>
+          <ButtonLink to={`/perfil/${id}`}>
+            <p>Saiba mais</p>
+          </ButtonLink>
+        </S.ButtonSpace>
       </S.ContainerInfo>
     </S.RestauranteContainer>
   )

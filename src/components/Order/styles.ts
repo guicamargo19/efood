@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Colors } from '../../styles'
+import { Colors, breakpoints } from '../../styles'
 
 export const DeliveryContainer = styled.div`
   position: fixed;
@@ -52,6 +52,7 @@ export const CardData = styled.div`
     font-size: 14px;
     line-height: 22px;
     font-weight: 400;
+    text-align: justify;
   }
 `
 
@@ -68,6 +69,10 @@ export const Sidebar = styled.aside`
   padding: 32px 8px 0 8px;
   color: ${Colors.footerBackground};
   z-index: 1;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 80%;
+  }
 `
 
 export const CardButton = styled.div`

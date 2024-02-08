@@ -146,4 +146,13 @@ export const ImagemFundo = styled.div`
     padding-top: 156px;
     color: ${Colors.mainBackground};
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    h1 {
+      font-size: 24px;
+    }
+    ${TagContainer} {
+      font-size: 24px;
+    }
+  }
 `

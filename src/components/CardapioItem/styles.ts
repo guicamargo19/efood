@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Colors, breakpoints } from '../../styles'
+import { ButtonProductLink } from '../Button/styles'
 
 export const CardapioContainer = styled.div`
   max-width: 320px;
@@ -73,16 +74,12 @@ export const ModalContent = styled.div`
   position: relative;
   z-index: 1;
 
-  @media (max-width: ${breakpoints.tablet}) {
-    max-width: 90%;
-  }
-
   header {
     display: flex;
     justify-content: end;
 
     img {
-      padding: 8px;
+      padding: 6px;
       cursor: pointer;
 
       &:hover {
@@ -90,11 +87,19 @@ export const ModalContent = styled.div`
       }
     }
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    max-width: 80%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    max-width: 80%;
+  }
 `
 
 export const ItemModal = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   padding-left: 32px;
   padding-right: 32px;
   padding-bottom: 32px;
@@ -103,6 +108,31 @@ export const ItemModal = styled.div`
     width: 280px;
     height: 280px;
     object-fit: cover;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 28px;
+
+    img {
+      width: 220px;
+      height: 280px;
+    }
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    padding-left: 28px;
+    padding-right: 28px;
+    padding-bottom: 0;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 246px;
+      height: 170px;
+      margin-bottom: 16px;
+    }
   }
 `
 
@@ -125,24 +155,39 @@ export const ItemInfoModal = styled.div`
     margin-bottom: 16px;
     text-align: justify;
   }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    margin-left: 0;
+    text-align: center;
+  }
 `
 
 export const ButtonContainer = styled.div`
   display: flex;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
   color: ${Colors.textColor};
   width: 218px;
+  padding-right: 4px;
+
   background-color: ${Colors.footerBackground};
 
   span {
     font-size: 14px;
     font-weight: 700;
     line-height: 16px;
-    margin-right: 4px;
   }
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    margin-bottom: 28px;
+    width: 100%;
+
+    ${ButtonProductLink} {
+      text-align: start;
+    }
   }
 `

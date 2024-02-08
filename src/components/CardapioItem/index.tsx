@@ -42,8 +42,8 @@ export const CardapioItem = ({
   }
 
   const getDescricao = (descricao: string) => {
-    if (descricao.length > 120) {
-      return descricao.slice(0, 117) + '...'
+    if (descricao.length > 75) {
+      return descricao.slice(0, 72) + '...'
     }
     return descricao
   }
@@ -90,9 +90,8 @@ export const CardapioItem = ({
             />
           </header>
           <S.ItemModal>
-            <div>
-              <img key={id} src={foto} alt={nome} />
-            </div>
+            <img key={id} src={foto} alt={nome} />
+
             <S.ItemInfoModal>
               <h2>{nome}</h2>
               <p>

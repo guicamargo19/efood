@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Colors } from '../../styles'
+import { Colors, breakpoints } from '../../styles'
 import lixeira from '../../assets/lixeira.png'
 
 export const Overlay = styled.div`
@@ -39,6 +39,10 @@ export const Sidebar = styled.aside`
   > button {
     max-width: 100%;
     width: 100%;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 80%;
   }
 `
 

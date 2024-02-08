@@ -121,33 +121,31 @@ const Order = () => {
       cep: Yup.string()
         .transform((value) => value.replace(/[^\d]/g, ''))
         .min(8, 'O CEP precisa ter pelo menos 8 caracteres')
-        .max(8, 'O CEP precisa ter no máximo 8 caracteres')
         .required('Campo obrigatório'),
       numero: Yup.string()
         .min(1, 'O número precisa ter pelo menos 1 caracteres')
         .required('Campo obrigatório'),
       cardName: Yup.string()
-        .min(5, 'O nome precisa ter pelo menos 5 caracteres')
+        .transform((value) => value.replace(/[0-9]/g, ''))
+        .min(5, 'Mínimo de 5 caracteres e apenas letras')
         .required('Campo obrigatório'),
       cardNumber: Yup.string()
         .transform((value) => value.replace(/[^\d]/g, ''))
         .min(16, 'O número do cartão precisa ter pelo menos 16 caracteres')
-        .max(16, 'O número do cartão precisa ter no máximo 16 caracteres')
         .required('Campo obrigatório'),
       cvv: Yup.string()
         .transform((value) => value.replace(/[^\d]/g, ''))
         .min(3, 'O CVV precisa ter pelo menos 3 caracteres')
-        .max(3, 'O CVV precisa ter no máximo 3 caracteres')
         .required('Campo obrigatório'),
       month: Yup.string()
         .transform((value) => value.replace(/[^\d]/g, ''))
-        .min(2, 'O mês precisa ter pelo menos 2 caracteres')
-        .max(2, 'O mês precisa ter no máximo 2 caracteres')
+        .transform((value) => (value > 1 && value <= 12 ? value : ''))
+        .min(2, 'Mês inválido')
         .required('Campo obrigatório'),
       year: Yup.string()
         .transform((value) => value.replace(/[^\d]/g, ''))
-        .min(2, 'O ano precisa ter pelo menos 2 caracteres')
-        .max(2, 'O ano precisa ter no máximo 2 caracteres')
+        .transform((value) => (value > 23 ? value : ''))
+        .min(2, 'Ano inválido')
         .required('Campo obrigatório')
     }),
     onSubmit: (values) => {

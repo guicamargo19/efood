@@ -67,6 +67,11 @@ export const Descricao = styled.p`
   margin-bottom: 16px;
 
   @media (max-width: ${breakpoints.tablet}) {
-    height: 170px;
+    height: 184px;
   }
+`
+
+export const ButtonSpace = styled.div`
+  display: flex;
+  margin-top: 16px;
 `
