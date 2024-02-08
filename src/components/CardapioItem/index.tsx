@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import { add, open } from '../../store/reducers/cart'
-import { formataPreco } from '../../containers/Cardapio'
-import { MenuItensType } from '../../pages/Perfil'
+//import { MenuItensType } from '../../pages/Perfil'
 import Button from '../Button'
 import close from '../../assets/close.png'
 import * as S from './styles'
+import { ParseToBrl } from '../../utils'
 
 export type Props = {
   foto: string
@@ -109,7 +109,7 @@ export const CardapioItem = ({
                 >
                   Adicionar ao carrinho -
                 </Button>
-                <span>{formataPreco(preco)}</span>
+                <span>{ParseToBrl(preco)}</span>
               </S.ButtonContainer>
             </S.ItemInfoModal>
           </S.ItemModal>

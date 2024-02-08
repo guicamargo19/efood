@@ -1,16 +1,9 @@
 import { CardapioItem } from '../../components/CardapioItem'
-import { MenuItensType } from '../../pages/Perfil'
+//import { MenuItensType } from '../../pages/Perfil'
 import { ListaCardapio } from './styles'
 
 type Props = {
   items: MenuItensType[]
-}
-
-export const formataPreco = (preco = 0) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(preco)
 }
 
 export const Cardapio = ({ items }: Props) => {

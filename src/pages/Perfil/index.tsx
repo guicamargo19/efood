@@ -6,7 +6,7 @@ import {
   useGetRestauranteIdQuery
 } from '../../services/api'
 
-export type MenuItensType = {
+/* export type MenuItensType = {
   nome: string
   porcao: string
   preco: number
@@ -19,7 +19,7 @@ export type MenuType = {
   titulo: string
   tipo: string
   capa: string
-}
+} */
 
 const Perfil = () => {
   const { id } = useParams()

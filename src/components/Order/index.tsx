@@ -9,9 +9,9 @@ import { clear, close } from '../../store/reducers/cart'
 import { closeOrder, openOrder } from '../../store/reducers/order'
 import { closePayment, openPayment } from '../../store/reducers/payment'
 import { closeDelivery } from '../../store/reducers/delivery'
-import { formataPreco } from '../../containers/Cardapio'
 import Button from '../Button'
 import * as S from './styles'
+import { ParseToBrl } from '../../utils'
 
 const Order = () => {
   const { deliveryOpen } = useSelector((state: RootReducer) => state.delivery)
@@ -307,7 +307,7 @@ const Order = () => {
                 <S.CardData>
                   <h2>
                     Pagamento - valor a pagar{' '}
-                    <span>{formataPreco(getTotalPrice())}</span>
+                    <span>{ParseToBrl(getTotalPrice())}</span>
                   </h2>
                   <label htmlFor="cardName">Nome no cartão</label>
                   <input
