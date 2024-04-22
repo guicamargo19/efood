@@ -26,6 +26,15 @@ export const FooterContainer = styled.div`
     color: ${Colors.textColor};
   }
 
+  a {
+    color: ${Colors.textColor};
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   @media (max-width: ${breakpoints.mobile}) {
     img {
       width: 96px;

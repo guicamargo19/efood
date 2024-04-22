@@ -169,7 +169,6 @@ export const ButtonContainer = styled.div`
   color: ${Colors.textColor};
   width: 218px;
   padding-right: 4px;
-
   background-color: ${Colors.footerBackground};
 
   span {
